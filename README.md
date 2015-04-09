@@ -14,6 +14,7 @@ What I'd like this launcher to be is :
  - Always be up-to-date.
  - Have all the cool features from other launchers: themes, widgets list, backup&restore, gestures, ...
  - No BloatWare installed or allegedly installed.
+ - Maybe have the ability to replace the locker (if the user accepts, of course), and have its own features too.
 
 
 **Background**
