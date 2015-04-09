@@ -26,8 +26,8 @@ If you wish to import the "Launcher3" app too, or you wish to upgrade the one he
 1. clone the "Launcher3" project from [here](https://android.googlesource.com/platform/packages/apps/Launcher3) .
 2. Note the "protos/backup.proto" folder. you need to compile it using "protoc" tool. get the latest one from [here](https://github.com/google/protobuf/releases) (or stable one from [here](https://developers.google.com/protocol-buffers/docs/downloads)), and run this command on the cloned folder:
 
-    protoc –javanano_out=src/ -I protos protos/backup.proto
-    
+  protoc --javanano_out=src/ -I protos protos/backup.proto
+
 3. Since there are going to be some conflicts in java files, move all of the "wallpaperPicker" java files (in "src" folder) into the main folder. 
 4. Get the "proto-nano" library and use it within the project. You can get the latest one [here](https://github.com/google/protobuf/releases) (search for "protobuf-javanano...") .
 4. import the projects into Eclipse, and make the main one use the "wallpaperPicker" project as an Android library project. 
