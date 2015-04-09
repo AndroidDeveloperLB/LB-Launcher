@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- /* -->
+<!-- ** -->
+<!-- ** Copyright 2008, The Android Open Source Project -->
+<!-- ** -->
+<!-- ** Licensed under the Apache License, Version 2.0 (the "License"); -->
+<!-- ** you may not use this file except in compliance with the License. -->
+<!-- ** You may obtain a copy of the License at -->
+<!-- ** -->
+<!-- **     http://www.apache.org/licenses/LICENSE-2.0 -->
+<!-- ** -->
+<!-- ** Unless required by applicable law or agreed to in writing, software -->
+<!-- ** distributed under the License is distributed on an "AS IS" BASIS, -->
+<!-- ** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. -->
+<!-- ** See the License for the specific language governing permissions and -->
+<!-- ** limitations under the License. -->
+<!-- */ -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.lb.launcher" >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="22" />
+
+    <permission
+        android:name="com.android.launcher.permission.INSTALL_SHORTCUT"
+        android:description="@string/permdesc_install_shortcut"
+        android:label="@string/permlab_install_shortcut"
+        android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
+        android:protectionLevel="dangerous" />
+    <permission
+        android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT"
+        android:description="@string/permdesc_uninstall_shortcut"
+        android:label="@string/permlab_uninstall_shortcut"
+        android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
+        android:protectionLevel="dangerous" />
+    <permission
+        android:name="com.lb.launcher.permission.READ_SETTINGS"
+        android:description="@string/permdesc_read_settings"
+        android:label="@string/permlab_read_settings"
+        android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
+        android:protectionLevel="normal" />
+    <permission
+        android:name="com.lb.launcher.permission.WRITE_SETTINGS"
+        android:description="@string/permdesc_write_settings"
+        android:label="@string/permlab_write_settings"
+        android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
+        android:protectionLevel="signatureOrSystem" />
+    <permission
+        android:name="com.lb.launcher.permission.RECEIVE_LAUNCH_BROADCASTS"
+        android:protectionLevel="signature" />
+    <permission
+        android:name="com.lb.launcher.permission.RECEIVE_FIRST_LOAD_BROADCAST"
+        android:protectionLevel="signatureOrSystem" />
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER_HINTS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission
+        android:name="android.permission.BIND_APPWIDGET"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="com.lb.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.lb.launcher.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="com.lb.launcher.permission.RECEIVE_LAUNCH_BROADCASTS" />
+    <uses-permission android:name="com.lb.launcher.permission.RECEIVE_FIRST_LOAD_BROADCAST" />
+
+    <application
+        android:name="com.lb.launcher.LauncherApplication"
+        android:allowBackup="@bool/enable_backup"
+        android:backupAgent="com.lb.launcher.LauncherBackupAgentHelper"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher_home"
+        android:label="@string/application_name"
+        android:largeHeap="@bool/config_largeHeap"
+        android:restoreAnyVersion="true"
+        android:supportsRtl="true" >
+        <activity
+            android:name="com.lb.launcher.Launcher"
+            android:clearTaskOnLaunch="true"
+            android:enabled="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="nosensor"
+            android:stateNotNeeded="true"
+            android:theme="@style/Theme"
+            android:windowSoftInputMode="adjustPan" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.MONKEY" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.lb.launcher.LauncherExtension"
+            android:clearTaskOnLaunch="true"
+            android:enabled="false"
+            android:launchMode="singleTask"
+            android:screenOrientation="nosensor"
+            android:stateNotNeeded="true"
+            android:theme="@style/Theme"
+            android:windowSoftInputMode="adjustPan" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.MONKEY" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.lb.launcher.ToggleWeightWatcher"
+            android:enabled="@bool/debug_memory_enabled"
+            android:icon="@mipmap/ic_launcher_home"
+            android:label="@string/toggle_weight_watcher" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.lb.launcher.LauncherWallpaperPickerActivity"
+            android:finishOnCloseSystemDialogs="true"
+            android:icon="@mipmap/ic_launcher_wallpaper"
+            android:label="@string/pick_wallpaper"
+            android:process=":wallpaper_chooser"
+            android:theme="@style/Theme.WallpaperPicker" >
+            <intent-filter>
+                <action android:name="android.intent.action.SET_WALLPAPER" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.lb.launcher.WallpaperCropActivity"
+            android:finishOnCloseSystemDialogs="true"
+            android:icon="@mipmap/ic_launcher_wallpaper"
+            android:label="@string/crop_wallpaper"
+            android:process=":wallpaper_chooser"
+            android:theme="@style/Theme.WallpaperCropper" >
+            <intent-filter>
+                <action android:name="android.service.wallpaper.CROP_AND_SET_WALLPAPER" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="image/*" />
+            </intent-filter>
+        </activity>
+
+        <!-- Debugging tools -->
+        <activity
+            android:name="com.lb.launcher.MemoryDumpActivity"
+            android:enabled="@bool/debug_memory_enabled"
+            android:excludeFromRecents="true"
+            android:icon="@mipmap/ic_launcher_home"
+            android:label="@string/debug_memory_activity"
+            android:theme="@android:style/Theme.NoDisplay" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="com.lb.launcher.MemoryTracker"
+            android:enabled="@bool/debug_memory_enabled" >
+        </service>
+
+        <receiver android:name="com.lb.launcher.WallpaperChangedReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.WALLPAPER_CHANGED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Intent received used to install shortcuts from other applications -->
+        <receiver
+            android:name="com.lb.launcher.InstallShortcutReceiver"
+            android:permission="com.android.launcher.permission.INSTALL_SHORTCUT" >
+            <intent-filter>
+                <action android:name="com.android.launcher.action.INSTALL_SHORTCUT" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Intent received used to uninstall shortcuts from other applications -->
+        <receiver
+            android:name="com.lb.launcher.UninstallShortcutReceiver"
+            android:permission="com.android.launcher.permission.UNINSTALL_SHORTCUT" >
+            <intent-filter>
+                <action android:name="com.android.launcher.action.UNINSTALL_SHORTCUT" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Intent received used to initialize a restored widget -->
+        <receiver android:name="com.lb.launcher.AppWidgetsRestoredReceiver" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_HOST_RESTORED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- New user initialization; set up initial wallpaper -->
+        <receiver
+            android:name="com.lb.launcher.UserInitializeReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="android.intent.action.USER_INITIALIZE" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.lb.launcher.PackageChangedReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_CHANGED" />
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" >
+                </data>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.lb.launcher.StartupReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- The settings provider contains Home's data, like the workspace favorites -->
+        <provider
+            android:name="com.lb.launcher.LauncherProvider"
+            android:authorities="com.lb.launcher.settings"
+            android:exported="true"
+            android:readPermission="com.lb.launcher.permission.READ_SETTINGS"
+            android:writePermission="com.lb.launcher.permission.WRITE_SETTINGS" />
+
+        <meta-data
+            android:name="android.nfc.disable_beam_default"
+            android:value="true" />
+    </application>
+
+</manifest>
