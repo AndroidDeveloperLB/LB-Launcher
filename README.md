@@ -30,9 +30,10 @@ If you wish to import the "Launcher3" app too, or you wish to upgrade the one he
     
 3. Since there are going to be some conflicts in java files, move all of the "wallpaperPicker" java files (in "src" folder) into the main folder. 
 4. Get the "proto-nano" library and use it within the project. You can get the latest one [here](https://github.com/google/protobuf/releases) (search for "protobuf-javanano...") .
-4. import the projects into Eclipse, and make the main one use the "wallpaperPicker" project as an Android library project.
-5. Errors fixing time. Fix all errors that you find.
-6. Run the app on the emulator/device. if it works, you can try to convert it to Android-Studio project.
+4. import the projects into Eclipse, and make the main one use the "wallpaperPicker" project as an Android library project. 
+5. Errors fixing time. Fix all errors that you find. 
+6. Run the app on the emulator/device. If you wish to see what I got on this phase, the original project folder before converting to Android-Studio is on the repository.
+7. You can try to convert it to Android-Studio project.
 
 
 **Why I've made this project**
