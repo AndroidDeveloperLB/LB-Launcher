@@ -33,7 +33,7 @@ If you wish to import the "Launcher3" app too, or you wish to upgrade the one he
 4. import the projects into Eclipse, and make the main one use the "wallpaperPicker" project as an Android library project. 
 5. Errors fixing time. Fix all errors that you find. 
 6. Run the app on the emulator/device. If you wish to see what I got on this phase, the original project folder before converting to Android-Studio is on the repository.
-7. You can try to convert it to Android-Studio project.
+7. You can try to convert it to Android-Studio project (yes, this phase also takes time).
 
 
 **Why I've made this project**
