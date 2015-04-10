@@ -14,6 +14,7 @@ What I'd like this launcher to be is :
  - Always be up-to-date.
  - Have all the cool features from other launchers: themes, widgets list, backup&restore, gestures, ...
  - No BloatWare installed or allegedly installed.
+ - Maybe have the ability to replace the locker (if the user accepts, of course), and have its own features too.
 
 
 **Background**
@@ -25,12 +26,14 @@ If you wish to import the "Launcher3" app too, or you wish to upgrade the one he
 1. clone the "Launcher3" project from [here](https://android.googlesource.com/platform/packages/apps/Launcher3) .
 2. Note the "protos/backup.proto" folder. you need to compile it using "protoc" tool. get the latest one from [here](https://github.com/google/protobuf/releases) (or stable one from [here](https://developers.google.com/protocol-buffers/docs/downloads)), and run this command on the cloned folder:
 
-    protoc –javanano_out=src/ -I protos protos/backup.proto
-    
+        protoc --javanano_out=src/ -I protos protos/backup.proto
+
 3. Since there are going to be some conflicts in java files, move all of the "wallpaperPicker" java files (in "src" folder) into the main folder. 
-4. import the projects into Eclipse, and make the main one use the "wallpaperPicker" project as an Android library project.
-5. Errors fixing time. Fix all errors that you find.
-6. Run the app on the emulator/device. if it works, you can try to convert it to Android-Studio project.
+4. Get the "proto-nano" library and use it within the project. You can get the latest one [here](https://github.com/google/protobuf/releases) (search for "protobuf-javanano...") .
+4. import the projects into Eclipse, and make the main one use the "wallpaperPicker" project as an Android library project. 
+5. Errors fixing time. Fix all errors that you find. 
+6. Run the app on the emulator/device. If you wish to see what I got on this phase, the original project folder before converting to Android-Studio is on the repository.
+7. You can try to convert it to Android-Studio project (yes, this phase also takes time).
 
 
 **Why I've made this project**
