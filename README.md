@@ -6,6 +6,7 @@ A truly open sourced launcher app, based on the same launcher app that comes wit
  - It's the exact same launcher as "Launcher3" currently (**Kitkat** version, to allow most people use it, and because I had issues importing the Lollipop version), and I assume it has the same issues as the normal one.
  - Only thing I've changed is the name and package name, so that it won't interfere with other launchers. 
  - Minimum API to be able to launch the app : 16 (Jelly Bean) . I think it should suffice for now, but I would really love to see it get updated.
+ - XDA forum link: http://forum.xda-developers.com/android/apps-games/app-lb-launcher-sourced-community-t3077606
 
 **Screenshots**
 
