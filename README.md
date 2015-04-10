@@ -7,7 +7,15 @@ A truly open sourced launcher app, based on the same launcher app that comes wit
  - Only thing I've changed is the name and package name, so that it won't interfere with other launchers. 
  - Minimum API to be able to launch the app : 16 (Jelly Bean) . I think it should suffice for now, but I would really love to see it get updated.
 
+**Screenshots**
+
+Well, it's the "Launcher3" based launcher, so... anyway here is a sample animation:
+
+![demo](https://raw.githubusercontent.com/AndroidDeveloperLB/LB-Launcher/master/demo.gif)
+
+
 **Todo/wishes**
+
 What I'd like this launcher to be is :
 
  - Always stay open sourced and free for all. Donation feature might be added (but only optional for users) in the future though, but credits will be given for everyone. :)
