@@ -36,7 +36,7 @@ If you wish to import the "Launcher3" app too, or you wish to upgrade the one he
 
         protoc --javanano_out=src/ -I protos protos/backup.proto
 
-This should create a file BackupProtos.java , which you'll need to use.
+  This should create a file BackupProtos.java , which you'll need to use.
 
 3. Since there are going to be some conflicts in java files, move all of the "wallpaperPicker" java files (in "src" folder) into the main folder. 
 4. Get the "proto-nano" library and use it within the project. You can get the latest one [here](https://github.com/google/protobuf/releases) (search for "protobuf-javanano...") .
