@@ -49,7 +49,7 @@ If you wish to import the "Launcher3" app too, or you wish to upgrade the one he
 
 **Why I've made this project**
 
-Well, there are a couple of reasons:
+Well, here are some of the reasons:
  - I always wanted to create a launcher app, but I've noticed that a lot of work was done by Google, so I've decided to import it instead.
  - There isn't even a single launcher on the Play Store that's fully open sourced.
- - I hope developers would help making this an awesome launcher, and also keep it up-to-date.
+ - I hope developers would help making this an awesome launcher, and also keep it up-to-date. It would be great to see it getting as popular as the big ones.
